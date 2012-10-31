@@ -1,0 +1,14 @@
+<categories>
+    <category>
+        <!-- This category has all the available children -->
+        <name>Category 1</name>
+        <description>This is category 2</description>
+        <icon>icons/ic_launcher.png</icon>
+        <file>c1.xml</file>
+    </category>
+    <category>
+        <!-- Only name and file are required -->
+        <name>Category 2</name>
+        <file>c2.xml</file>
+    </category>
+</categories>

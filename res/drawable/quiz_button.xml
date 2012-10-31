@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:app="http://schemas.android.com/apk/res/com.jjm.android.quiz" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/quiz_button_normal" 
+        app:state_showing_answer="false"/>
+    <item android:drawable="@drawable/quiz_button_correct" 
+        app:state_correct="true" 
+        app:state_showing_answer="true"/>
+    <item app:state_correct="false"
+          app:state_showing_answer="true"
+          android:drawable="@drawable/quiz_button_incorrect"/>
+
+</selector>

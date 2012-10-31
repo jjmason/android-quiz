@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <declare-styleable name="quiz_button">
+        <attr name="state_correct" format="boolean" />
+        <attr name="state_showing_answer" format="boolean" />
+    </declare-styleable>
+</resources>
