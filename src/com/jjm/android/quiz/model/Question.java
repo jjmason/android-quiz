@@ -7,25 +7,53 @@ public class Question {
 	private String text;
 	private List<String> choices = 
 			new ArrayList<String>();
+	
 	private int answer;
+	
+	/**
+	 * The text of the question
+	 * @return the text
+	 */
 	public String getText() {
 		return text;
 	}
-	public void setText(String text) {
-		this.text = text;
-	}
+	
+	/**
+	 * Choices to present to the user.
+	 * @return the choices
+	 */
 	public List<String> getChoices() {
 		return choices;
 	}
-	public void setChoices(List<String> choices) {
-		this.choices = choices;
-	}
+	
+	/**
+	 * The index of the correct answer in {@link #getChoices()}.
+	 * @return the index
+	 */
 	public int getAnswer() {
 		return answer;
 	}
-	public void setAnswer(int answer) {
+	
+	/**
+	 * Whether this question is valid
+	 * @return the validity in question
+	 */
+	public boolean isValid(){
+		return answer >= 0 && answer < choices.size() 
+				&& !choices.isEmpty() && text != null;
+	}
+	
+	////////////////////////////
+	// Package private setters
+	////////////////////////////
+	void setAnswer(int answer) {
 		this.answer = answer;
 	}
+	
+	void setText(String text) {
+		this.text = text;
+	}
+	
 	@Override
 	public String toString() {
 		return "Question [text=" + text + ", choices=" + choices + ", answer="

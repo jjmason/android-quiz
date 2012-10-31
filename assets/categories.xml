@@ -1,14 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <categories>
-    <category>
-        <!-- This category has all the available children -->
-        <name>Category 1</name>
-        <description>This is category 2</description>
-        <icon>icons/ic_launcher.png</icon>
-        <file>c1.xml</file>
-    </category>
-    <category>
-        <!-- Only name and file are required -->
-        <name>Category 2</name>
-        <file>c2.xml</file>
-    </category>
+<category>
+  <name>Category 1</name>
+  <file>xml/1.xml</file>
+</category>
+<category>
+  <name>Category 2</name>
+  <file>xml/2.xml</file>
+</category>
+<category>
+  <name>Category 3</name>
+  <file>xml/3.xml</file>
+</category>
+<category>
+  <name>Category 4</name>
+  <file>xml/4.xml</file>
+</category>
+<category>
+  <name>Category 5</name>
+  <file>xml/5.xml</file>
+</category>
+<category>
+  <name>Category 6</name>
+  <file>xml/6.xml</file>
+</category>
+<category>
+  <name>Category 7</name>
+  <file>xml/7.xml</file>
+</category>
+<category>
+  <name>Category 8</name>
+  <file>xml/8.xml</file>
+</category>
+<category>
+  <name>Category 9</name>
+  <file>xml/9.xml</file>
+</category>
+<category>
+  <name>Category 10</name>
+  <file>xml/10.xml</file>
+</category>
+<category>
+  <name>Category 11</name>
+  <file>xml/11.xml</file>
+</category>
+<category>
+  <name>Category 12</name>
+  <file>xml/12.xml</file>
+</category>
+<category>
+  <name>Category 13</name>
+  <file>xml/13.xml</file>
+</category>
+<category>
+  <name>Category 14</name>
+  <file>xml/14.xml</file>
+</category>
+<category>
+  <name>Category 15</name>
+  <file>xml/15.xml</file>
+</category>
+<category>
+  <name>Category 16</name>
+  <file>xml/16.xml</file>
+</category>
+<category>
+  <name>Category 17</name>
+  <file>xml/17.xml</file>
+</category>
+<category>
+  <name>Category 18</name>
+  <file>xml/18.xml</file>
+</category>
+<category>
+  <name>Category 19</name>
+  <file>xml/19.xml</file>
+</category>
+<category>
+  <name>Category 20</name>
+  <file>xml/20.xml</file>
+</category>
 </categories>

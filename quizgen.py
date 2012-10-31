@@ -34,15 +34,24 @@ def write_categories(ind):
         ind.wl("<category>")
         ii = ind.indent()
         ii.wl("<name>Category %d</name>"%(i+1))
-        for i in range(50):
-            write_question(ii)
+        ii.wl("<file>xml/%d.xml</file>"%(i+1))
         ind.wl("</category>")
         
 
-out = open("assets/quiz.xml","w")
+out = open("assets/categories.xml","w")
 out.write('<?xml version="1.0" encoding="UTF-8"?>\n')
 ind = Indenter(out)
-ind.wl("<quiz>")
+ind.wl("<categories>")
 write_categories(ind)
-ind.wl("</quiz>")
+ind.wl("</categories>")
 out.close()
+for i in range(20):
+    out = open("assets/xml/%d.xml"%(i+1),"w")
+    ind = Indenter(out)
+    ind.wl("<questions>")
+    ii = ind.indent()
+    for i in range(50):
+        write_question(ii)
+    ind.wl("</questions>")
+    out.close()
+    

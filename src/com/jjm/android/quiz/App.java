@@ -12,8 +12,6 @@ import android.preference.PreferenceManager;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import com.jjm.android.quiz.loader.QuizLoaderException;
-import com.jjm.android.quiz.loader.XmlQuizLoader;
 import com.jjm.android.quiz.model.Quiz;
 
 @Singleton
@@ -60,15 +58,8 @@ public class App {
 
 		new Thread(new Runnable() {
 			public void run() {
-				try {
-					Thread.sleep(50); // This gets the ui loaded quicker for some reason
-					quiz = new XmlQuizLoader().loadQuiz(
-							application.getAssets(), "quiz.xml");
-				} catch (QuizLoaderException e) {
-					throw new RuntimeException(e);
-				} catch (InterruptedException e) {
-					
-				}
+				quiz = new Quiz(getApplication());
+				quiz.loadCategories();
 				handler.post(new Runnable() {
 					public void run() {
 						xmlLoaded = true;
