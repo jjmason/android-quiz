@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res/com.jjm.android.quiz">
+    <!-- base color for answer buttons -->
+    <item 
+        app:state_showing_answer="false" 
+        android:color="#ff9900"/>
+    <item 
+        app:state_correct="true" 
+        app:state_showing_answer="true" 
+        android:color="#70c656"/>
+    <item 
+        app:state_correct="false" 
+        app:state_showing_answer="true" 
+        android:color="#ef4444"/>
+
+</selector>

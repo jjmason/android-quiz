@@ -13,5 +13,40 @@
     <string name="title_activity_categories">Pick a Category</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="setting_sound_label">Sound</string>
+	<string name="loading_progress_message">Loading assets into database.</string>
+	<string name="loading_progress_title">Creating Database</string>
+	<string name="header_image_content_description">Application Logo</string>
+	<string name="header_title">String \"header_title\"</string>
+	<string name="header_text">String \"header_text\"</string>
+	<string name="default_content_description">Not Important</string>
+	<string name="show_answer">Show Answer</string>
+	<string name="show_question">Show Question</string>
+	<string name="next">Next</string>
+	<string name="back">Back</string>
+	<string name="next_question">Next Question</string>
+	<string name="progress_template">Question ^1 of ^2</string>
+	<string name="score_template">^1 of ^2 (%^3)</string>
+	<string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc molestie scelerisque venenatis. Sed luctus suscipit metus, eu facilisis magna sodales eu. Aliquam erat volutpat. Morbi eu egestas metus. Mauris at turpis justo. Fusce sit amet dolor eu magna luctus posuere ac nec mi. Proin non orci lacus. Sed tincidunt adipiscing magna, ac tempus velit condimentum ac. Duis non neque pellentesque massa semper iaculis. Donec viverra faucibus auctor. Donec urna diam, aliquam a accumsan vitae, lobortis vel neque. Phasellus quis elit metus. Mauris feugiat scelerisque orci id tempus. Ut id velit orci. Ut vestibulum mauris vestibulum tortor hendrerit tempus.
 
+Sed mauris est, posuere nec sollicitudin non, laoreet et erat. Integer eu velit in nisl malesuada pharetra sit amet sed nulla. Donec blandit tellus ac nisi condimentum elementum. Donec commodo aliquam ante volutpat sollicitudin. Nam et erat ut sem eleifend dignissim et non dui. Donec tempus massa vel ante congue mollis. Etiam magna tortor, faucibus quis consectetur sed, auctor non nisl. Curabitur cursus dolor eget ligula laoreet vitae luctus felis dictum. Nullam suscipit suscipit arcu. Aenean pellentesque pharetra euismod. Fusce scelerisque est ut lectus malesuada iaculis.
+
+Curabitur ac ligula nibh, sed congue dui. Aliquam imperdiet mi vitae felis iaculis at feugiat purus accumsan. Mauris tempus laoreet scelerisque. Nunc fringilla interdum interdum. In et purus id turpis accumsan aliquet. Curabitur ullamcorper metus nec mi pulvinar imperdiet vestibulum nisi hendrerit. Proin iaculis vestibulum congue. In hac habitasse platea dictumst. Suspendisse vestibulum elit sed nisi placerat sagittis. Integer tincidunt suscipit mi ut tempor.
+
+Suspendisse vulputate aliquet velit, id dapibus massa imperdiet eget. In suscipit bibendum interdum. Praesent sit amet augue libero. Suspendisse risus metus, egestas et rhoncus eu, pulvinar vitae dolor. Cras consequat mollis nibh, nec condimentum metus fermentum eu. Pellentesque sagittis mi vitae magna accumsan non pulvinar nunc molestie. Curabitur quis dui non dui pharetra pulvinar ut ut ligula. Quisque vitae sem risus, in tempus est. Curabitur id leo a justo feugiat sagittis. Pellentesque at arcu in orci ultrices rutrum sit amet eu purus. In id luctus ligula. Maecenas quam quam, blandit vel commodo vitae, blandit in lorem. Praesent dignissim massa nisi, sed venenatis justo. Etiam egestas nisi eget dolor accumsan at bibendum ante mattis. Aliquam eget turpis ante, a imperdiet dolor.
+
+Nullam ut diam risus. Curabitur in eros sed nisi sollicitudin tincidunt sit amet vel sem. Integer dolor elit, placerat quis consequat ac, viverra sit amet erat. Maecenas orci nibh, semper suscipit tempor sit amet, dignissim ut dolor. Duis ultrices, sapien ac semper malesuada, velit nisi sollicitudin erat, ut lobortis augue orci eget risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in orci imperdiet leo cursus sollicitudin. Suspendisse risus metus, congue sagittis laoreet vel, ultrices sit amet orci. Sed leo massa, faucibus eget fringilla vitae, tempor at risus. Vivamus vitae tellus ac nisi interdum laoreet ac eu mi. Integer molestie, tellus scelerisque bibendum vehicula, libero lectus scelerisque purus, eget ullamcorper sem eros a ante. Cras suscipit erat at enim auctor eget fermentum justo ultrices. Vivamus eleifend erat nec ipsum tincidunt vulputate.</string>
+	<string name="sound_warning">This question has sound.  Touch here to change your settings so that you can hear it.</string>
+	<string name="score_placeholder">"4 of 7 (53%) "</string>
+	<string name="progress_placeholder">Question 7 of 10</string>
+	<string name="long_test_answer1">The minimum knowledge and skills that an individual must demonstrate before standing
+watches or performing other specific routine duties necessary for the safety, security, or
+proper operation of a ship, aircraft, or support system.</string>
+	<string name="long_test_answer2"><![CDATA[
+			    Reasons from the following sources: Navy Training Plans (<a href="http://www.navy.mil">OPNAVINST 1500.8</a>) Tasking by higher authority Internal course reviews and local command initiatives External feedback Surveillance Training Appraisal (SWTRR/NTRR/STRR) 
+			]]></string>
+	<string name="short_test_answer1">Standardize qualification requirements.</string>
+	<string name="short_test_answer2">One Billion Years</string>
+	<string name="long_test_question1">The minimum knowledge and skills that an individual must demonstrate before standing
+watches or performing other specific routine duties necessary for the safety, security, or
+proper operation of a ship, aircraft, or support system.</string>
 </resources>

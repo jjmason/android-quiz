@@ -3,14 +3,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_vertical"
+    android:contentDescription="@string/default_content_description"
     android:orientation="horizontal" >
 
-    <TextView
-        android:id="@+id/textView"
+    <FrameLayout
+        android:id="@+id/iconFrame"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:text="Category One"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_height="match_parent"
+        android:minHeight="48dip"
+        android:minWidth="48dip" >
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/default_content_description"
+            android:maxHeight="48dp"
+            android:maxWidth="48dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_action_search"
+            android:visibility="visible" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/centerTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:textColor="@color/white"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <View
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top" 
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/secondary_text" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/secondary_text" />
+
+    </LinearLayout>
 
 </LinearLayout>

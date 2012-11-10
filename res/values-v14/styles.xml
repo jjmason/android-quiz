@@ -1,5 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+        <style name="theme" parent="@android:style/Theme.Holo">
+            <item name="@android:attr/colorForeground">@color/foreground</item>
+        	<item name="@android:attr/colorForegroundInverse">@color/foreground_inverse</item>
+        	<item name="@android:attr/colorBackground">@color/background</item>
+        	<item name="@android:attr/disabledAlpha">0.5</item>
+        	<item name="@android:attr/backgroundDimAmount">0.6</item>
 
-    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar" />
-
+        	<item name="@android:attr/colorPressedHighlight">@color/highlight</item>
+        	<item name="@android:attr/colorLongPressedHighlight">@color/highlight</item>
+        	<item name="@android:attr/colorFocusedHighlight">@color/highlight</item>
+        	<item name="@android:attr/colorMultiSelectHighlight">@color/highlight</item>
+        	<item name="@android:attr/colorActivatedHighlight">@color/highlight</item>
+    </style> 
 </resources>

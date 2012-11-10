@@ -1,83 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <categories>
-<category>
-  <name>Category 1</name>
-  <file>xml/1.xml</file>
-</category>
-<category>
-  <name>Category 2</name>
-  <file>xml/2.xml</file>
-</category>
-<category>
-  <name>Category 3</name>
-  <file>xml/3.xml</file>
-</category>
-<category>
-  <name>Category 4</name>
-  <file>xml/4.xml</file>
-</category>
-<category>
-  <name>Category 5</name>
-  <file>xml/5.xml</file>
-</category>
-<category>
-  <name>Category 6</name>
-  <file>xml/6.xml</file>
-</category>
-<category>
-  <name>Category 7</name>
-  <file>xml/7.xml</file>
-</category>
-<category>
-  <name>Category 8</name>
-  <file>xml/8.xml</file>
-</category>
-<category>
-  <name>Category 9</name>
-  <file>xml/9.xml</file>
-</category>
-<category>
-  <name>Category 10</name>
-  <file>xml/10.xml</file>
-</category>
-<category>
-  <name>Category 11</name>
-  <file>xml/11.xml</file>
-</category>
-<category>
-  <name>Category 12</name>
-  <file>xml/12.xml</file>
-</category>
-<category>
-  <name>Category 13</name>
-  <file>xml/13.xml</file>
-</category>
-<category>
-  <name>Category 14</name>
-  <file>xml/14.xml</file>
-</category>
-<category>
-  <name>Category 15</name>
-  <file>xml/15.xml</file>
-</category>
-<category>
-  <name>Category 16</name>
-  <file>xml/16.xml</file>
-</category>
-<category>
-  <name>Category 17</name>
-  <file>xml/17.xml</file>
-</category>
-<category>
-  <name>Category 18</name>
-  <file>xml/18.xml</file>
-</category>
-<category>
-  <name>Category 19</name>
-  <file>xml/19.xml</file>
-</category>
-<category>
-  <name>Category 20</name>
-  <file>xml/20.xml</file>
-</category>
+    <progress>4</progress>
+	<category>
+	    <title>OPNAVINST 5510.1 Series</title>
+	    <text> FORWARDING OF STUDENTS' CLASSIFIED SCHOOL NOTES</text> 
+	    <mode>quiz</mode>
+	    <question>
+	        <text>105-10.4 Which of the following is not a benifit of instructor cross-utilization? (encl 3 para 3.c)</text>
+	        <choice>Reduce monotony</choice>
+	        <choice>Provide valuable, varied experience</choice>
+	        <choice>Saves Money</choice>
+	        <choice>Provide back-ups where feasible</choice>
+	        <answer>2</answer>
+	    </question>
+	    <question>
+	        <text>105-10.1 The method used to determine instructor billets is based on what?
+(encl 3 para 1.b)</text>
+	        <choice>number of contact periods</choice>
+	        <choice>I have no idea what this question is about</choice>
+	        <choice>Here's another choice!</choice>
+	        <answer>0</answer>
+	    </question>
+	    <question>
+	        <text>105-9.4 In formal training courses where PQS lines may be signed, what procedure
+is followed to inform a receiving command which line items have been
+completed and signed? (para 5.d.4)</text>
+			<choice>Standardize qualification requirements.</choice>
+			<choice>The minimum knowledge and skills that an individual must demonstrate before standing
+watches or performing other specific routine duties necessary for the safety, security, or
+proper operation of a ship, aircraft, or support system.</choice>
+			<choice>CCA (answered used to be CNET)</choice>
+			<answer>0</answer>
+	    </question>
+	    <question>
+	        <text>105-8.6 How long shall "archived material" be maintained in the repository?
+(NAVEDTRA 135 page 4-1-9)</text>
+			<choice>One Billion Years</choice>
+			<choice format="html"><![CDATA[
+			    Reasons from the following sources:
+			    <ul>
+					<li>Navy Training Plans (<a href="http://www.navy.mil">OPNAVINST 1500.8</a>)</li>
+					<li>Tasking by higher authority</li>
+					<li>Internal course reviews and local command initiatives</li>
+					<li>External feedback</li>
+					<li>*Surveillance</li>
+					<li>Training Appraisal (SWTRR/NTRR/STRR)</li>
+				</ul>
+			]]></choice>
+	    </question>
+	</category>
+	<category>
+	    <title>Big Stuff</title>
+	    <text><![CDATA[
+	        A bunch of questions with <b>HUUUGE</b> text
+	    ]]>
+	    </text>
+	    <mode>flashcard</mode>
+	    <question>
+	        <text><![CDATA[
+	            <img src="icons/ic_launcher.png"/>
+	            <h3>101.2 List the responsibility of each of the following members of the training
+organizational structure:</h3> 
+				<ul>
+					<li>Chief of Naval Operations (CNO)</li> 
+					<li>Functional Commander</li> 
+					<li>Curriculum Control Authority (CCA)</li> 
+					<li>Lead Training Site (LTS) (formerly CCMM)</li> 
+					<li>Participating Activity (Training Site).</li>
+				<ul>
+				<a href="http://www.google.com/">(page 1-1-1 to 1-1-8)</a>
+				]]>
+			</text>
+	        <choice>
+	            <![CDATA[
+	            <p>
+	            <b><u>CNO</u></b> - Strives to continuously improve the quality of our military and civilian work force
+through fact based, innovative, systematic changes affecting recruitment, training, and
+quality of life. Determines military training requirements, provides funding for training
+and eliminates redundancies in the system.
+				</p>
+				<p><b><u>CCA</u></b> - The Curriculum Control Authority approves instructional methods and materials
+and operates and maintains assigned courses.</p>
+				<p><b><u>LTS</u></b> - The Leading Training Site (formerly CCMM) is responsible for developing,
+revising, and maintaining a course of instruction.</p>
+				<p><span style="text-decoration:underline;font-weight:bold;">
+					Participating Activities
+					</span> - A Training Site who is not the Leading Training Site.
+Supports the LTS in the area of curriculum support.</p>
+			]]>
+			</choice> 
+	        <answer>0</answer>
+	    </question>
+	    <question>
+	        <text>101.7 When are Academic Review Boards (ARBs) required? (page 3-6-1)</text>
+			<choice>
+			    <![CDATA[
+			    <p>
+			    ARB’s will be convened when all other means of academic counseling, remediation
+and an initial academic setback have failed to improve student performance. The initial
+academic setback may result from an academic counseling session and be directed by the
+course supervisor/lead instructor. Additional academic setbacks must be directed by the
+ARB. Examples of when an ARB may be necessary include the following:</p>
+<ul>
+	<li>students course average falls below the minimum-passing grade.</li>
+	<li>Student’s performance is below the expected academic progress.</li>
+	<li>Student is unable to achieve the objectives after counseling, remediation,
+retesting and an initial academic setback by the course supervisor/lead
+instructor. (after Course sup initiated setback)</li>
+	<li>Student fails to achieve the objectives after an ARB academic setback on
+those same objectives. (after ARB initiated setback)</li>
+</ul>
+]]>
+			</choice>
+			<answer>0</answer>
+	   	</question>
+	</category>
+	
+	<category>
+	    <title>Media</title>
+	    <text>Sounds and Images</text>
+	    <mode>quiz</mode>
+	    <question>
+	        <text>What do I say?</text>
+	        <image>images/cow.jpg</image>
+	        <choice>Baahhh</choice>
+	        <choice>Mooo</choice>
+	        <choice>Bow Wow</choice>
+	        <answer>1</answer>
+	    </question>
+	    <question>
+	        <text>What animal made that sound?</text>
+	        <audio>audio/cow-moo.wav</audio>
+	        <choice>Pig</choice>
+	        <choice>Alpaca</choice>
+	        <choice>Cow</choice>
+	        <answer>2</answer>
+	    </question>
+	    <question>
+	        <text>Who is this cool cat?</text>
+	        <image>images/billc.jpg</image>
+	        <choice>Tony Montana</choice>
+	        <choice>Micheal Jordan</choice>
+	        <choice>Bill Clinton</choice>
+	        <choice>Howard Taft</choice>
+	        <answer>2</answer>
+	    </question>
+	</category>
 </categories>

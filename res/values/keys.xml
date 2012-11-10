@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="key_showIcons">showIcons</string>
+	<string name="key_showHighScores">showHighScores</string>
+	<string name="key_allowSkipQuestions">allowSkipQuestions</string>
+	<string name="key_quizLength">quizLength</string>
+	<string name="key_soundEnabled">soundEnabled</string>
+	<string name="key_questionFontSize">questionFontSize</string>
+	<string name="key_autoNextQuestion">autoNextQuestion</string>
+	<string name="key_autoNextQuestionDelay">autoNextQuestionDelay</string>
+	<string name="key_mode">mode</string>
+	<string name="key_navigation">navigation</string>
+	<string name="key_questionLayout">questionLayout</string>
+	<string name="key_animate">animate</string>
+	<string name="key_export">export</string>
+	<string name="key_flashcardAnimationType">flashcardAnimationType</string>
+	<string name="key_questionAnimationType">questionAnimationType</string>
+	<string-array name="mode_entryValues">
+	    <item>0</item>
+	    <item>1</item>
+	    <item>2</item>
+	</string-array> 
+	<string-array name="mode_entries">
+	    <item>Multiple Choice</item>
+	    <item>Flashcard</item>
+	    <item>Per Category</item>
+	</string-array>
+	
+	<string-array name="navigation_entryValues">
+	    <item>1</item>
+	    <item>2</item>
+	    <item>3</item>
+	</string-array>
+	<string-array name="navigation_entries">
+	    <item>Buttons</item>
+	    <item>Gestures</item>
+	    <item>Buttons and Gestures</item>
+	</string-array>
+	
+	<string-array name="questionLayout_entryValues">
+	    <item>1</item>
+	    <item>2</item>
+	</string-array>
+	<string-array name="questionLayout_entries">
+	    <item>Fixed Buttons</item>
+	    <item>Scroll Buttons</item>
+	</string-array>
+</resources>

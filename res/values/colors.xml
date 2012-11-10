@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="secondary_text">#A0A0A0</color>
+    <color name="orange">#FF9900</color>
+    <color name="answer_pressed">#ff9900</color>
+    <color name="olive">#666633</color>
+    <color name="blue">#000099</color>
+    <color name="yellow">#FFCC00</color>
+    <color name="foreground">@color/white</color>
+    <color name="background">@color/blue</color>
+    <color name="foreground_inverse">@color/blue</color>
+    <color name="highlight">@color/orange</color>
+</resources>

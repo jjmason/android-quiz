@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.jjm.android.quiz"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:layout_marginBottom="24dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="24dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <include layout="@layout/question_content" />
+
+        <LinearLayout
+            android:id="@+id/buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <com.jjm.android.quiz.view.QuizButton
+                android:id="@+id/answer1"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:correct="false"
+                app:showing_answer="true" />
+
+            <com.jjm.android.quiz.view.QuizButton
+                android:id="@+id/answer2"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:correct="true"
+                app:showing_answer="true" />
+
+            <com.jjm.android.quiz.view.QuizButton
+                android:id="@+id/answer3"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.jjm.android.quiz.view.QuizButton
+                android:id="@+id/answer4"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/next"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/next_question" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
