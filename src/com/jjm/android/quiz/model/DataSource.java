@@ -17,7 +17,7 @@ import com.jjm.android.quiz.util.Util;
  * Provides access to the database.
  */
 public class DataSource {
-	public static final int DB_VERSION = 2342346;
+	public static final int DB_VERSION = 2342349;
 
 	public interface CategoryColumns extends BaseColumns {
 		public static final String TABLE_NAME = "category";
@@ -122,7 +122,9 @@ public class DataSource {
 	}
 	
 	public long addCategory( ) { 
-		return write().insert(CategoryColumns.TABLE_NAME, new ContentValues());
+		ContentValues cv = new ContentValues();
+		cv.put(CategoryColumns.HIGHSCORE_COLUMN, -1f);
+		return write().insert(CategoryColumns.TABLE_NAME, cv);
 	}
 
 	public long addQuestion(long categoryId, String text, String image,
@@ -145,7 +147,8 @@ public class DataSource {
 
 	public boolean saveScore(long categoryId, float highScore) {
 		ContentValues cv = new ContentValues();
-		cv.put("highScore", highScore);
+		cv.put(CategoryColumns.HIGHSCORE_COLUMN, highScore);
+
 		return 0 != write().update(
 				CategoryColumns.TABLE_NAME,
 				CategoryColumns.HIGHSCORE_COLUMN + "<" + highScore + " AND "

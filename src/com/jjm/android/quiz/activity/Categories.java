@@ -92,6 +92,12 @@ public class Categories extends RoboListActivity {
     }
 
 	@Override
+	protected void onResume() {
+		super.onResume();
+		initListAdapter(); // so that we get the updated high scores
+	}
+	
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
@@ -158,7 +164,7 @@ public class Categories extends RoboListActivity {
 			
 			TextView text = (TextView)view.findViewById(R.id.text);
 			if(c.getText() != null){
-				text.setText(c.getText());
+				text.setText(mApp.getHtmlCache().getHtml(c.getText()));
 			}else{
 				text.setVisibility(View.GONE);
 			}

@@ -9,15 +9,13 @@
     <ImageView
         android:id="@+id/questionImage"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/billc" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/questionText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:linksClickable="true"
-        android:text="@string/long_test_answer2" />
+        android:linksClickable="true" />
 
 </LinearLayout>
