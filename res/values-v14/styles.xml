@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-        <style name="theme" parent="@android:style/Theme.Holo">
-            <item name="@android:attr/colorForeground">@color/foreground</item>
-        	<item name="@android:attr/colorForegroundInverse">@color/foreground_inverse</item>
-        	<item name="@android:attr/colorBackground">@color/background</item>
-        	<item name="@android:attr/disabledAlpha">0.5</item>
-        	<item name="@android:attr/backgroundDimAmount">0.6</item>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-        	<item name="@android:attr/colorPressedHighlight">@color/highlight</item>
-        	<item name="@android:attr/colorLongPressedHighlight">@color/highlight</item>
-        	<item name="@android:attr/colorFocusedHighlight">@color/highlight</item>
-        	<item name="@android:attr/colorMultiSelectHighlight">@color/highlight</item>
-        	<item name="@android:attr/colorActivatedHighlight">@color/highlight</item>
-    </style> 
+    <style name="theme" parent="@android:style/Theme.Holo">
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:colorBackgroundCacheHint">@color/background</item>
+        <item name="android:textColorPrimary">@color/foreground</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:colorPressedHighlight">@color/highlight</item>
+    </style>
+
+    <style name="button">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:linksClickable">true</item>
+    </style>
+
 </resources>

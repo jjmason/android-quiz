@@ -77,6 +77,11 @@ public class FlashcardFragment extends QuestionFragment {
 		outState.putBoolean(SHOWING_ANSWER_KEY, mShowingAnswer);
 	}
 	
+	@Override
+	protected boolean isNextQuestionButtonEnabled() {
+		return true;
+	}
+	
 	public static FlashcardFragment newInstance(Question question, boolean isLastQuestion){
 		FlashcardFragment fragment = new FlashcardFragment();
 		fragment.setArguments(newArguments(question, isLastQuestion));

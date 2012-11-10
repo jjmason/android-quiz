@@ -39,17 +39,13 @@
             android:id="@+id/answer1"
             style="@style/button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:correct="false"
-            app:showing_answer="true" />
+            android:layout_height="wrap_content" />
 
         <com.jjm.android.quiz.view.QuizButton
             android:id="@+id/answer2"
             style="@style/button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:correct="true"
-            app:showing_answer="true" />
+            android:layout_height="wrap_content"/>
 
         <com.jjm.android.quiz.view.QuizButton
             android:id="@+id/answer3"
@@ -69,6 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/next_question" />
+
     </LinearLayout>
 
 </RelativeLayout>

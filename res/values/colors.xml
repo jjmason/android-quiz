@@ -11,4 +11,14 @@
     <color name="background">@color/blue</color>
     <color name="foreground_inverse">@color/blue</color>
     <color name="highlight">@color/orange</color>
+    
+    <!-- button colors -->
+    <color name="button_normal_start">#ff8f00</color>
+    <color name="button_normal_end">#aa3e00</color>
+    <color name="button_incorrect_start">#ad2416</color>
+    <color name="button_incorrect_end">#80170e</color>
+    <color name="button_correct_start">#377d00</color>
+    <color name="button_correct_end">#00570a</color>
+    <color name="button_disabled_start">#d8d8d8</color>
+    <color name="button_disabled_end">#6b6a6a</color>
 </resources>

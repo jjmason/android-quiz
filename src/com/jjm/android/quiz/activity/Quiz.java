@@ -1,15 +1,18 @@
 package com.jjm.android.quiz.activity;
 
+import java.io.IOException;
 import java.util.Random;
 
 import roboguice.activity.RoboFragmentActivity;
 import roboguice.inject.InjectExtra;
 import roboguice.inject.InjectView;
 import android.database.Cursor;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -24,6 +27,7 @@ import com.jjm.android.quiz.fragment.MultipleChoiceFragment;
 import com.jjm.android.quiz.fragment.QuestionFragment.QuestionListener;
 import com.jjm.android.quiz.model.DataSource;
 import com.jjm.android.quiz.model.Question;
+import com.jjm.android.quiz.util.SoundPoolAssistant;
 import com.jjm.android.quiz.util.Task;
 
 public class Quiz extends RoboFragmentActivity implements QuestionListener {
@@ -70,6 +74,7 @@ public class Quiz extends RoboFragmentActivity implements QuestionListener {
 	private int mNumCorrect;
 	private Task mNextQuestionTask;
 	private Handler mHandler = new Handler();
+	private SoundPoolAssistant mSoundPool;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -92,8 +97,25 @@ public class Quiz extends RoboFragmentActivity implements QuestionListener {
 		}
 		
 		selectQuestions();
-		updateProgressAndScore();
+		loadAudio();
+		updateProgress();
+		updateScore();
 		showCurrentQuestion();
+	}
+	
+	private void loadAudio(){
+		mSoundPool = new SoundPoolAssistant(this, 1, AudioManager.STREAM_MUSIC);
+		mSoundPool.load(R.raw.correct);
+		mSoundPool.load(R.raw.incorrect);
+		for(Question q : mQuestions){
+			if(q.getAudio() != null){
+				try{
+					mSoundPool.load(q.getAudio());
+				}catch(IOException e){
+					Log.e("Quiz", "error loading sound " + q.getAudio());
+				}
+			}
+		}
 	}
 	
 	@Override
@@ -134,11 +156,14 @@ public class Quiz extends RoboFragmentActivity implements QuestionListener {
 
 	}
 
-	private void updateProgressAndScore(){
-		mScoreTextView.setText(getScoreText());
+	private void updateProgress(){ 
 		mProgressTextView.setText(getProgressText());
 	}
 
+	private void updateScore(){
+		mScoreTextView.setText(getScoreText());
+	}
+	
 	private String getProgressText(){
 		return String.format("Question %d of %d",
 				mQuestionIndex + 1,
@@ -173,6 +198,18 @@ public class Quiz extends RoboFragmentActivity implements QuestionListener {
 			transaction.add(R.id.fragmentContainer, fragment);
 		}
 		transaction.commit();
+		
+		final Question q = mQuestions[mQuestionIndex];
+		if(q.getAudio() != null && mConfig.getSoundEnabled()){
+			// use a little delay to let the question appear
+			mHandler.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					mSoundPool.play(q.getAudio());
+				}
+			}, 500);
+			// TODO warn the user if their sound is off
+		}
 	}
 	
 	private Fragment createFragment(){
@@ -186,6 +223,7 @@ public class Quiz extends RoboFragmentActivity implements QuestionListener {
 
 	@Override
 	public void onNextQuestion() {
+		cancelNextQuestionTask();
 		if(mQuestionIndex  + 1 >= mQuestions.length){
 			Toast.makeText(this, "Done", Toast.LENGTH_LONG).show();
 			mHandler.postDelayed(new Runnable() {
@@ -199,9 +237,16 @@ public class Quiz extends RoboFragmentActivity implements QuestionListener {
 			mQuestionIndex ++;
 			showCurrentQuestion();
 		}
-		updateProgressAndScore();
+		updateProgress();
 	}
 
+	private void cancelNextQuestionTask(){
+		if(mNextQuestionTask != null){
+			mNextQuestionTask.cancel();
+			mNextQuestionTask = null;
+		}
+	}
+	
 	@Override
 	public void onQuestionAnswered(int answer) {
 		mNumAnswered ++;
@@ -209,9 +254,19 @@ public class Quiz extends RoboFragmentActivity implements QuestionListener {
 		if(correct){
 			mNumCorrect ++;
 		}
-		// TODO Sound
-		// TODO Auto next
-		
+		mScoreTextView.setText(getScoreText());
+		if(mConfig.getSoundEnabled()){
+			mSoundPool.play(correct ? R.raw.correct : R.raw.incorrect);
+		} 
+		if(mConfig.getAutoNextQuestion()){
+			cancelNextQuestionTask();
+			mHandler.postDelayed(mNextQuestionTask = new Task(new Runnable() {
+				@Override
+				public void run() {
+					onNextQuestion();
+				}
+			}), mConfig.getAutoNextQuestionDelay());
+		}
 	}
 	
 }

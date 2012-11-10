@@ -17,7 +17,7 @@ import com.jjm.android.quiz.util.Util;
  * Provides access to the database.
  */
 public class DataSource {
-	public static final int DB_VERSION = 2342345;
+	public static final int DB_VERSION = 2342346;
 
 	public interface CategoryColumns extends BaseColumns {
 		public static final String TABLE_NAME = "category";

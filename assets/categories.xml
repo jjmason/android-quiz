@@ -137,6 +137,12 @@ those same objectives. (after ARB initiated setback)</li>
 	        <answer>2</answer>
 	    </question>
 	    <question>
+	        <text><![CDATA[This image should be <b>big!</b>]]></text>
+	        <image>images/platlogo.png</image>
+	        <choice>Just another choice...</choice>
+	        <answer>0</answer>
+	    </question>
+	    <question>
 	        <text>Who is this cool cat?</text>
 	        <image>images/billc.jpg</image>
 	        <choice>Tony Montana</choice>
