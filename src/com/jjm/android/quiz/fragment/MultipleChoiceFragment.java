@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.jjm.android.quiz.Config;
 import com.jjm.android.quiz.R;
 import com.jjm.android.quiz.model.Question;
 import com.jjm.android.quiz.view.QuizButton;
@@ -18,7 +17,7 @@ public class MultipleChoiceFragment extends QuestionFragment {
 	
 	@Override
 	protected int getLayoutResourceId() {
-		return mApp.getConfig().getQuestionLayout() == Config.LAYOUT_FIXED_BUTTONS ?
+		return mApp.getConfig().fixedLayout() ?
 				R.layout.multiple_choice_fragment_fixed_buttons :
 					R.layout.multiple_choice_fragment_scroll_buttons;
 	}

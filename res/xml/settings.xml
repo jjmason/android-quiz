@@ -1,61 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
     <CheckBoxPreference 
-        android:key="@string/key_showIcons"
-        android:title="Use category icons"
-        android:defaultValue="true"
-        />
-    <CheckBoxPreference 
-        android:key="@string/key_showHighScores"
-        android:title="Show high scores"
-        android:defaultValue="true"/>
-    <CheckBoxPreference 
         android:key="@string/key_soundEnabled" 
-        android:title="@string/setting_sound_label"
-        android:defaultValue="true"/>
-    <EditTextPreference 
-        android:key="@string/key_questionFontSize"
-        android:title="Font size for questions"
-        android:defaultValue="14"/>
-    <CheckBoxPreference 
-        android:key="@string/key_allowSkipQuestions"
-        android:title="Allow user to skip questions"
-        android:defaultValue="true"/>
-    <CheckBoxPreference 
-        android:key="@string/key_animate"
-        android:title="Animations"
+        android:title="Sound"
+        android:summaryOn="Sound is enabled"
+        android:summaryOff="Sound is not enabled"
         android:defaultValue="true"/>
     <CheckBoxPreference 
         android:key="@string/key_autoNextQuestion"
-        android:title="Automatically go to the next question"
-        android:defaultValue="true"
-        />
-    <EditTextPreference
-		android:key="@string/key_autoNextQuestionDelay"
-		android:title="Delay before showing the next question in millis"
-		android:numeric="integer"
-		android:defaultValue="1500"
-        /> 
-    <ListPreference
-        android:key="@string/key_mode"
-        android:entries="@array/mode_entries"
-        android:entryValues="@array/mode_entryValues"
-        android:defaultValue="2"
-        android:title="Quiz Mode"/> 
-    <ListPreference
-        android:key="@string/key_navigation"
-        android:entries="@array/navigation_entries"
-        android:entryValues="@array/navigation_entryValues"
-        android:title="Navigation Mode"
-        android:defaultValue="3"/>
-	<ListPreference 
-	    android:key="@string/key_questionLayout"
-	    android:entries="@array/questionLayout_entries"
-	    android:entryValues="@array/questionLayout_entryValues"
-	    android:title="Question Layout"
-	    android:defaultValue="2"/>
-	<Preference 
-	    android:persistent="false"
-	    android:title="Export Settings XML"
-	    android:key="@string/key_export"/>
+        android:title="Auto Next"
+        android:summary="Automatically go to the next question after answering"
+        android:defaultValue="false"/>
+	<EditTextPreference 
+	    android:key="@string/key_quizLength"
+	    android:title="Quiz Length"
+	    android:summary="Set the number of questions in a quiz"
+	    android:numeric="integer"
+	    android:defaultValue="15"/>
 </PreferenceScreen>

@@ -1,5 +1,6 @@
 package com.jjm.android.quiz.model;
 
+import java.io.File;
 import java.util.List;
 import java.util.Random;
 
@@ -17,8 +18,11 @@ import com.jjm.android.quiz.util.Util;
  * Provides access to the database.
  */
 public class DataSource {
-	public static final int DB_VERSION = 2342349;
+	// increasing this value will force the database to be reloaded.  Decreasing 
+	// it will cause an error.
+	public static final int DB_VERSION =5;
 
+	
 	public interface CategoryColumns extends BaseColumns {
 		public static final String TABLE_NAME = "category";
 
@@ -83,7 +87,8 @@ public class DataSource {
 	}
 
 	private OpenHelper openHelper;
-
+	private Context context;
+	
 	private static class OpenHelper extends SQLiteOpenHelper {
 		public OpenHelper(Context context) {
 			super(context, "quiz.db", null, DB_VERSION);
@@ -93,25 +98,58 @@ public class DataSource {
 		public void onCreate(SQLiteDatabase db) {
 			db.execSQL(CategoryColumns.CREATE_SQL);
 			db.execSQL(QuestionColumns.CREATE_SQL);
+			db.execSQL("CREATE TABLE metadata (apkLastModified INTEGER)");
 		}
 
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 			db.execSQL("DROP TABLE " + CategoryColumns.TABLE_NAME);
 			db.execSQL("DROP TABLE " + QuestionColumns.TABLE_NAME);
+			db.execSQL("DROP TABLE metadata");
 			onCreate(db);
 		}
 	}
 
 	@Inject
 	public DataSource(Context context) {
+		this.context = context;
 		openHelper = new OpenHelper(context); 
 	}
 
-	public boolean isDatabaseCreated() {
-		return queryCategories().getCount() != 0;
+	public void reset(){
+		openHelper.onUpgrade(openHelper.getWritableDatabase(), 0, 1);
+		updateApkLastModified();
+	}
+	
+	public long getRealApkLastModified(){
+		return new File(context.getPackageCodePath()).lastModified();
+	}
+	
+	public boolean isDatabaseCreated() { 
+		return getRealApkLastModified() <= getApkLastModified();
 	}
  
+	public long getApkLastModified(){
+		Cursor c = read().query("metadata");
+		if(c!=null && c.moveToFirst()){
+			return c.getLong(c.getColumnIndex("apkLastModified"));
+		}
+		return 0;
+	}
+	
+	public void updateApkLastModified(){
+		setApkLastModified(getRealApkLastModified());
+	}
+	
+	public void setApkLastModified(long lastModified){
+		write().delete("metadata", "1");
+		
+		ContentValues cv = new ContentValues();
+		cv.put("apkLastModified", lastModified);
+		
+		write().insert("metadata", cv);
+	}
+	
 	public void updateCategory(long id, String title, String text, String icon, int mode){
 		ContentValues cv = new ContentValues();
 		cv.put(CategoryColumns.TITLE_COLUMN, title);
@@ -269,6 +307,14 @@ public class DataSource {
 
 		public int update(String table, String selection, ContentValues cv) {
 			return db.update(table, cv, selection, null);
+		}
+		
+		public int delete(String table, String selection, String[] selectionArgs){
+			return db.delete(table, selection, selectionArgs);
+		}
+		
+		public int delete(String table, String selection){
+			return delete(table, selection, null);
 		}
 	}
 }

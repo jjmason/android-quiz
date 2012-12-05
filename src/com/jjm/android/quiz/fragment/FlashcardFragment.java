@@ -46,6 +46,7 @@ public class FlashcardFragment extends QuestionFragment {
 		super.onViewCreated(view, savedInstanceState);
 		mAnswerText.setText(mApp.getHtmlCache().getHtml(
 				mQuestion.getChoices()[mQuestion.getAnswer()]));
+		mAnswerText.setTextSize(mApp.getConfig().fontSize());
 		mShowButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

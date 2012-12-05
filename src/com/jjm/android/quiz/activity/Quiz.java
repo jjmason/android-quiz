@@ -19,7 +19,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.inject.Inject;
 import com.jjm.android.quiz.App;
@@ -107,6 +106,15 @@ public class Quiz extends RoboFragmentActivity implements QuestionListener {
 		showCurrentQuestion();
 	}
 
+	@Override
+	protected void onDestroy() { 
+		super.onDestroy();
+		// make sure we don't try to show the next question after we're dead
+		if(mNextQuestionTask != null){
+			mNextQuestionTask.cancel();
+		}
+	}
+	
 	private void loadAudio() {
 		mSoundPool = new SoundPoolAssistant(this, 1, AudioManager.STREAM_MUSIC);
 		mSoundPool.load(R.raw.correct);
@@ -130,7 +138,7 @@ public class Quiz extends RoboFragmentActivity implements QuestionListener {
 	}
 
 	private void selectQuestions() {
-		int maxQuestions = mConfig.getQuizLength();
+		int maxQuestions = mConfig.numQuestions();
 		Cursor cursor = mDataSource.queryQuestions(mCategoryId);
 		cursor.moveToFirst();
 		int totalQuestions = cursor.getCount();
@@ -182,7 +190,7 @@ public class Quiz extends RoboFragmentActivity implements QuestionListener {
 	}
 
 	private CharSequence getCompleteDialogTitle() {
-		if (mConfig.getShowHighScores() && mHighScore) {
+		if (mConfig.highScores() && mHighScore) {
 			return getText(R.string.complete_high_score);
 		}
 		return getText(R.string.complete);
@@ -209,7 +217,7 @@ public class Quiz extends RoboFragmentActivity implements QuestionListener {
 		mSoundWarning.setVisibility(View.GONE);
 		final Question q = mQuestions[mQuestionIndex];
 		if (q.getAudio() != null) {
-			if (mSoundPool.isSoundEnabled() && mConfig.getSoundEnabled()) {
+			if (mSoundPool.isSoundEnabled() && mConfig.soundEnabled()) {
 
 				// use a little delay to let the question appear
 				mHandler.postDelayed(new Runnable() {
@@ -305,17 +313,17 @@ public class Quiz extends RoboFragmentActivity implements QuestionListener {
 			mNumCorrect++;
 		}
 		mScoreTextView.setText(getScoreText());
-		if (mConfig.getSoundEnabled()) {
+		if (mConfig.soundEnabled()) {
 			mSoundPool.play(correct ? R.raw.correct : R.raw.incorrect);
 		}
-		if (mConfig.getAutoNextQuestion()) {
+		if (mConfig.autoNext()) {
 			cancelNextQuestionTask();
 			mHandler.postDelayed(mNextQuestionTask = new Task(new Runnable() {
 				@Override
 				public void run() {
 					onNextQuestion();
 				}
-			}), mConfig.getAutoNextQuestionDelay());
+			}), mConfig.autoNextDelay());
 		}
 	}
 

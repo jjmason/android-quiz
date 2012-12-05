@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import com.google.inject.Inject;
 import com.jjm.android.quiz.App;
-import com.jjm.android.quiz.Config;
 import com.jjm.android.quiz.R;
 import com.jjm.android.quiz.model.Question;
 
@@ -73,6 +72,8 @@ public abstract class QuestionFragment extends RoboFragment {
 		}
 
 		mQuestionText.setText(mApp.getHtmlCache().getHtml(mQuestion.getText()));
+		mQuestionText.setTextSize(mApp.getConfig().fontSize());
+		
 		Drawable d = mApp.getAssetCache().getDrawable(mQuestion.getImage());
 		if(d != null){
 			mQuestionImage.setVisibility(View.VISIBLE);
@@ -87,16 +88,13 @@ public abstract class QuestionFragment extends RoboFragment {
 			}
 		});
 		mNextButton.setText(mLastQuestion ? "Finish Quiz" : "Next Question");
-		mNextButton.setVisibility(mApp.getConfig().hasNavigationStyle(
-				Config.NAVIGATION_BUTTONS) ? View.VISIBLE : View.GONE);
-
 		
 		
 		onAnswerChanged();
 	}
 	
 	protected boolean isNextQuestionButtonEnabled(){
-		return mAnswer != NO_ANSWER || mApp.getConfig().getAllowSkipQuestions();
+		return mAnswer != NO_ANSWER;
 	}
 	
 	protected void onAnswerChanged(){

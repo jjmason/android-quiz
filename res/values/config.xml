@@ -1,11 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- The name of the resource to use for the settings page.  This always refers
-    	 to an xml resource, so only the name, with no extension, is necessary. For  
-    	 example, "settings" resolves to "res/xml/settings.xml"-->
-	<string name="config_settingsResource">settings</string>
-	
-	<!-- The asset file (relative to the assets directory). -->
+	<!-- Path (relative to 'assets/') of the file containing the questions -->
 	<string name="config_questionsFile">quiz-example.xml</string>
 	
+	<!-- Whether to use "flashcard" mode.  In flashcard mode the question is displayed
+		 with a button to show the answer instead of choices -->
+	<bool name="config_flashcardMode">true</bool>
+	
+	<!-- Whether to use a fixed layout.  If this is true, buttons are fixed in 
+		 the lower half of the screen.  If it is false, they are children of the
+		 scroll container and appear directly under the text, and scroll with it.
+		 Fixed is better for small questions and scroll is better for large ones. -->
+	<bool name="config_fixedLayout">true</bool>
+	
+	<!-- Whether we automatically go to the next question after the current one is
+		 answered.  Note that the user can currently change this from the settings page-->
+	<bool name="config_autoNext">false</bool>
+	
+	<!-- Delay in millis before automatically going to the next question -->
+	<integer name="config_autoNextDelay">1500</integer>
+	
+	<!-- Font size used for questions (in dip)-->
+	<integer name="config_fontSize">36</integer>
+	
+	<!-- Whether to save and display high scores -->
+	<bool name="config_highScores">true</bool>
+	
+	<!-- Whether sound is enabled by default -->
+	<bool name="config_defaultSoundEnabled">true</bool>
+	
+	<!-- Default number of questions in a quiz -->
+	<integer name="config_defaultNumQuestions">15</integer>
 </resources>
