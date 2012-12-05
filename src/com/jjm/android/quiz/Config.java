@@ -84,10 +84,10 @@ public class Config {
 	public int getFlashcardAnimationType(){
 		return getInt(R.string.key_flashcardAnimationType, ANIMATION_FLIP);
 	}
-	
+	 
 	private SharedPreferences mSharedPreferences; 
 	private final Context mContext;
-
+ 
 	@Inject
 	public Config(Context context) {
 		mContext = Preconditions.checkNotNull(context);
