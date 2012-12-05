@@ -5,7 +5,7 @@
 	
 	<!-- Whether to use "flashcard" mode.  In flashcard mode the question is displayed
 		 with a button to show the answer instead of choices -->
-	<bool name="config_flashcardMode">true</bool>
+	<bool name="config_flashcardMode">false</bool>
 	
 	<!-- Whether to use a fixed layout.  If this is true, buttons are fixed in 
 		 the lower half of the screen.  If it is false, they are children of the
@@ -21,7 +21,7 @@
 	<integer name="config_autoNextDelay">1500</integer>
 	
 	<!-- Font size used for questions (in dip)-->
-	<integer name="config_fontSize">36</integer>
+	<integer name="config_fontSize">16</integer>
 	
 	<!-- Whether to save and display high scores -->
 	<bool name="config_highScores">true</bool>
