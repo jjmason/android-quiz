@@ -7,8 +7,8 @@ Because the configuration and questions are bundled with the app, it needs to be
 
 Common Concepts
 ---------------- 
-	* A *config resource* is a value specified in the resource file at `res/values/config.xml`.  The format for this file is [documented here](http://developer.android.com/guide/topics/resources/index.html). *Do not remove any of the values from this file*.
-	* An *asset path* refers to the path of a file placed in the assets project directory, for example, the asset path `"audio/cow-moo.wav"` refers to the project path `"assets/audio/cow-moo.wav"`.
+* A *config resource* is a value specified in the resource file at `res/values/config.xml`.  The format for this file is [documented here](http://developer.android.com/guide/topics/resources/index.html). *Do not remove any of the values from this file*.
+* An *asset path* refers to the path of a file placed in the assets project directory, for example, the asset path `"audio/cow-moo.wav"` refers to the project path `"assets/audio/cow-moo.wav"`.
 	
 Xml Format
 ----------------
