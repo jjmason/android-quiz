@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<category>
+	<!-- Questions can include an image and/or audio with the "image" and "audio" 
+		tags. The files are given as asset paths (relative to the "assets" directory). 
+		Any commonly used file format should be ok. Specific sounds formats are here: 
+		http://developer.android.com/guide/appendix/media-formats.html -->
+	<title>Media</title>
+	<text>Sounds and Images</text>
+	<mode>quiz</mode>
+	<question>
+		<text>What do I say?</text>
+		<image>images/cow.jpg</image>
+		<choice>Baahhh</choice>
+		<choice>Mooo</choice>
+		<choice>Bow Wow</choice>
+		<answer>1</answer>
+	</question>
+	<question>
+		<text>What animal made that sound?</text>
+		<audio>audio/cow-moo.wav</audio>
+		<choice>Pig</choice>
+		<choice>Alpaca</choice>
+		<choice>Cow</choice>
+		<answer>2</answer>
+	</question>
+	<question>
+		<text>This image should be <b>big!</b></text>
+		<image>images/platlogo.png</image>
+		<choice>Just another choice...</choice>
+		<answer>0</answer>
+	</question>
+</category>

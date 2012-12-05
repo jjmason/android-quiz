@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<category>
+	<!-- The "title" tag is required for all categories -->
+	<title>Math Problems</title>
+	<!-- The "text" tag is optional, and gives some extra text to show in the list of 
+		 categories -->
+	<text>Some math problems of varying difficulty</text>
+	<!-- The "icon" tag is also optional.  It indicates an icon to use if the settings
+		 specify that icons should be shown in the category list.  This must be a path
+		 relative to the assets directory. -->
+	<icon>icons/ic_launcher.png</icon>
+	<!-- The "mode" tag indicates whether this category should be presented as a multiple
+	     choice quiz ("multiple-choice", this is the default) or flash cards ("flashcards"). 
+	     This category uses "multiple-choice". The "mode" tag is optional.-->
+	<mode>multiple-choice</mode>
+	<!-- The layout tag indicates whether the buttons should be fixed below a scroll area
+	     ("fixed", the default) or should scroll with the question content ("scroll"). This
+	     tag is optional. Since our math problems are fairly short, we go with fixed.--> 
+	<layout>fixed</layout>
+	<!-- Next come the questions.  Note that the children of a "category" tag can 
+	     actually come in any order.  This xml is just organized for clarity. -->
+	<question>
+		<!-- The question text, required.  Notice that some simple html can be included in this
+		     and other tags.  Complex xml, such as lists and tables is not supported. -->
+		<text>What is the <i>approximate</i> square root of 2?</text>
+		<!-- Next come the choices.  At least one choice is required, and the maximum that
+		     can reasonably fit in a fixed layout is 4. HTML is allowed here as well. -->
+		<choice>1</choice>
+		<choice>1.634</choice>
+		<choice>1.414</choice>
+		<choice>2</choice>
+		<!-- The answer tag contains the zero based index of the correct answer in the list of
+		     choices, in this case 2 for 1.414 -->
+		<answer>2</answer>
+	</question>
+	<question>
+		<text>
+			Does <b>P</b> equal <b>NP</b>?
+		</text>
+		<choice>Yes</choice>
+		<choice>No</choice>
+		<choice>I don't know</choice>
+		<answer>2</answer>
+	</question>
+</category>

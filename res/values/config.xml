@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- When set to true, show a developer version of settings allowing configuration
+         of all variables and xml export (xml/settings.xml). When set to false, show
+         the user version of settings allowing configuration of a limited number of variables
+         (xml/public_settings.xml)-->
+    <bool name="developmentSettings">true</bool>
+    
+    <!-- Whether to show icons in the category list -->
+	<bool name="categoryIcons">false</bool>
+	
+	<!-- Whether to track and display high scores -->
+	<bool name="highScores">true</bool>
+	
+	<!-- 
+		Default mode for categories
+		0 = multiple choice
+		1 = flashcards
+	-->
+	<integer name="defaultMode">0</integer>
+	
+	<!-- 
+		Default layout mode
+		0 = fixed
+		1 = scroll
+	 -->
+	 <integer name="defaultLayout">0</integer>
+	 
+	 <!-- Whether to go to the next question automatically after a delay -->
+	 <bool name="autoNext">true</bool>
+	 
+	 <!-- Delay before going to the next question automatically, in milliseconds -->
+	 <integer name="autoNextDelay">1500</integer>
+	 
+	 <!-- Whether to show the next question button.  This is ignored unless autoNext is true. -->
+	 <bool name="showNextButton">true</bool>
+	 
+	 <!-- Number of questions per quiz.  The user can override this if a preference is provided. -->
+	 <integer name="quizLength">20</integer>
+
+	<!-- Font size for questions -->
+	<integer name="fontSize">14</integer>	 
+</resources>

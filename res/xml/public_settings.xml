@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <CheckBoxPreference 
+        android:key="@string/key_soundEnabled"
+        android:title="Play Sounds"
+        android:summaryOn="Sound is enabled"
+        android:summaryOff="Sound is not enabled"
+        android:defaultValue="true"
+        />
+</PreferenceScreen>
