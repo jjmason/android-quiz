@@ -48,6 +48,7 @@ public class MultipleChoiceFragment extends QuestionFragment {
 				btn.setShowingAnswer(showingAnswer);
 				btn.setCorrect(i == question.getAnswer());
 				btn.setText(mApp.getHtmlCache().getHtml(question.getChoices()[i]));
+				btn.setClickable(!showingAnswer);
 			}else{
 				btn.setVisibility(View.GONE);
 			}
@@ -61,6 +62,7 @@ public class MultipleChoiceFragment extends QuestionFragment {
 		}
 		@Override
 		public void onClick(View v) {
+			if(mAnswer != NO_ANSWER) return;
 			setAnswer(mIndex);
 		}
 	}
