@@ -3,24 +3,13 @@ package com.jjm.android.quiz.model;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import com.jjm.android.quiz.Config;
-import com.jjm.android.quiz.R;
-
-import roboguice.util.RoboAsyncTask;
-import roboguice.util.SafeAsyncTask;
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.os.Handler;
 import android.util.Xml;
-import android.util.Xml.Encoding;
 
 public class XmlLoader {
 	public interface XmlLoadedListener {
@@ -31,8 +20,11 @@ public class XmlLoader {
 		public long id;
 		public String title;
 		public String text;
+		@SuppressWarnings("unused")
 		public String icon;
+		@SuppressWarnings("unused")
 		public int mode;
+		@SuppressWarnings("unused")
 		public int layout;
 	}
 
@@ -46,11 +38,9 @@ public class XmlLoader {
 
 	@SuppressWarnings("unused")
 	private static final String TAG = "QuizXml";
-	private XmlLoadedListener listener;
 	private final Context context;
 	private final DataSource dataSource;
-	private String fileName;
-
+	
 	public XmlLoader(Context context) {
 		this.context = context;
 		this.dataSource = new DataSource(context);
@@ -62,9 +52,7 @@ public class XmlLoader {
 		InputStream in = context.getAssets().open(fileName);
 		Xml.parse(in, Xml.Encoding.UTF_8, new XmlHandler()); 
 	}
-	private static final HashSet<String> handledTags = new HashSet<String>(Arrays.asList(
-			"question", "category", "title","text","audio","image","choice","answer"
-		));
+	
 	private class XmlHandler extends DefaultHandler {
 
 		

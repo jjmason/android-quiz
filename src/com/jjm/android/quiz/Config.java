@@ -6,18 +6,14 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.content.res.Resources;
 import android.preference.PreferenceManager;
-import android.util.Log;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import com.google.inject.internal.Preconditions;
 
 @SuppressLint("WorldReadableFiles")
 @Singleton
-public class Config { 
-	private static boolean sInitialized;
+public class Config {  
 	
 	public static final int MODE_MULTIPLE_CHOICE = 0;
 	public static final int MODE_FLASHCARD = 1;

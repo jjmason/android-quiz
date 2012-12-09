@@ -3,16 +3,14 @@ package com.jjm.android.quiz.util;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.WeakHashMap;
 
-import android.animation.IntEvaluator;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.util.Log;
-import android.util.SparseArray;
+import android.util.SparseIntArray;
 
 /**
  * Facade class to play sounds using a {@link MediaPlayer} (assets) or
@@ -45,7 +43,7 @@ public class SoundPoolAssistant {
 	private float mVolume;
 
 	private final Map<String, Integer> mPathToSoundId = new LinkedHashMap<String, Integer>();
-	private final SparseArray<Integer> mResIdToSoundId = new SparseArray<Integer>();
+	private final SparseIntArray mResIdToSoundId = new SparseIntArray();
 
 	public void setVolumeMode(VolumeMode mode) {
 		mVolumeMode = mode;

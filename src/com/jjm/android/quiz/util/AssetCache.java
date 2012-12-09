@@ -11,8 +11,6 @@ public class AssetCache {
 	private final Context mContext;
 	private HashMap<String, Drawable> mDrawables =
 			new HashMap<String, Drawable>();
-	private HashMap<String,Object> mAudio = 
-			new HashMap<String, Object>();
 	
 	public AssetCache(Context context){
 		mContext = context;
