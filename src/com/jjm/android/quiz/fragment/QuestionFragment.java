@@ -28,6 +28,7 @@ public abstract class QuestionFragment extends RoboFragment {
 	public static int NO_ANSWER = -1;
 	public static final String QUESTION_KEY = "question";
 	public static final String ANSWER_KEY = "answer";
+	public static final String ANSWERED_KEY = "answered";
 	public static final String LAST_QUESTION_KEY = "lastQuestion";
 
 	@Inject
@@ -46,6 +47,8 @@ public abstract class QuestionFragment extends RoboFragment {
 	protected boolean mLastQuestion; 
 	protected int mAnswer = NO_ANSWER;
 
+	protected boolean mAnswered = false;
+	
 	/** implemented to provide layouts for subclasses */
 	protected abstract int getLayoutResourceId();
 
@@ -56,6 +59,7 @@ public abstract class QuestionFragment extends RoboFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		
 		// don't do anything here because injection hasn't happened yet
 		return inflater.inflate(getLayoutResourceId(), container, false);
 	}
@@ -67,8 +71,10 @@ public abstract class QuestionFragment extends RoboFragment {
 		mLastQuestion = getArguments().getBoolean(LAST_QUESTION_KEY, false);
 		if (savedInstanceState != null) {
 			mAnswer = savedInstanceState.getInt(ANSWER_KEY, NO_ANSWER);
+			mAnswered = savedInstanceState.getBoolean(ANSWERED_KEY);
 		} else {
 			mAnswer = NO_ANSWER;
+			mAnswered = false;
 		}
 
 		mQuestionText.setText(mApp.getHtmlCache().getHtml(mQuestion.getText()));
@@ -99,7 +105,8 @@ public abstract class QuestionFragment extends RoboFragment {
 	
 	protected void onAnswerChanged(){
 		mNextButton.setEnabled(isNextQuestionButtonEnabled());
-		if(mAnswer != NO_ANSWER){
+		if(mAnswer != NO_ANSWER && !mAnswered){
+			mAnswered = true;
 			getQuestionListener().onQuestionAnswered(mAnswer);
 		}
 	}
@@ -115,6 +122,7 @@ public abstract class QuestionFragment extends RoboFragment {
 	public void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
 		outState.putInt(ANSWER_KEY, mAnswer);
+		outState.putBoolean(ANSWERED_KEY, mAnswered);
 	}
 	
 	public static Bundle newArguments(Question question, boolean lastQuestion){

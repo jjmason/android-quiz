@@ -27,6 +27,7 @@ public class MultipleChoiceFragment extends QuestionFragment {
 		super.onViewCreated(view, savedInstanceState);
 		for(int i=0;i<sAnswerButtonIds.length;i++)
 			view.findViewById(sAnswerButtonIds[i]).setOnClickListener(new ButtonListener(i));
+		
 	}
 	
 	@Override
@@ -61,8 +62,7 @@ public class MultipleChoiceFragment extends QuestionFragment {
 			mIndex = index;
 		}
 		@Override
-		public void onClick(View v) {
-			if(mAnswer != NO_ANSWER) return;
+		public void onClick(View v) { 
 			setAnswer(mIndex);
 		}
 	}
